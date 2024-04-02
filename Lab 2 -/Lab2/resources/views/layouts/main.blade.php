@@ -14,7 +14,12 @@
     .dropdown-menu .dropdown-item:hover {
     background-color: rgb(94, 94, 234); /* Change to your desired hover background color */
     color: white; /* Change to match your text color */
+
   }
+  .navbar{
+        background-color: rgb(151, 151, 255) ;
+
+    }
 </style>
 </head>
 <body>
@@ -27,6 +32,7 @@
                         <a class="navbar-brand" href="{{ url('/') }}">Laravel</a>
                         <a class="navbar-brand" href="{{ url('/posts') }}">Home</a>
                         <a class="navbar-brand" href="{{ url('/users') }}">Users</a>
+                        <a class="navbar-brand" href="{{ url('/posts/trash') }}">Deleted Posts</a>
                         <div class="dropdown itempage-dropdown">
         <button
           class="btn btn-light dropdown-toggle"

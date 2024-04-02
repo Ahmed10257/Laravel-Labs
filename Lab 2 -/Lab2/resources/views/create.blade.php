@@ -3,7 +3,7 @@
 @section('content')
 @section('title', 'Create New Post')
     <div class="container">
-        <form class="mx-auto mt-5" action="{{ route('posts.store') }}" method="POST">
+        <form class="mx-auto mt-5" action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -31,6 +31,9 @@
                    {{$message}}
             </div>
             @enderror
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" @class(['form-control','is-invalid'=> $errors->has('title')]) id="image" name="image">
             <button type="submit" class="btn btn-primary">Create Post</button>
         </form>
     </div>

@@ -20,6 +20,7 @@
                 <td class="w-25">{{ $post->id }}</td>
                 <td class='w-25'>{{ substr($post->title,0,15) }}</td>
                 <td class='w-25'>{{ substr($post->body,0,50) }}</td>
+                <td class='w-25'>{{ $post->user->name }}</td>
                 {{-- @if($post->user_id == Auth::id()) --}}
                 <td>
                     <a class="btn btn-primary" href="{{ url("/posts/{$post->id}") }}">View</a>

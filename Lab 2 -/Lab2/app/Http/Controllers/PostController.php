@@ -40,11 +40,17 @@ class PostController extends Controller
     {
         $data = $request->validate([
             'title' => ['required', 'max:30'],
-
             'body' => ['required', 'max:255'],
             'published' => ['required', 'boolean']]);
         $data['published_at']=Carbon::now();
         $data['user_id']=Auth::id();
+
+        $image_path=null;
+        if($request->has('image') && $request->file('image')->isValid()){
+            $image_path=$request->file('image')->store('posts',['disk'=>'public']);
+            $data['image']=$image_path;
+        }
+        $data['image']=$image_path;
         Post::create($data);
         return redirect()->route('posts.index');
     }

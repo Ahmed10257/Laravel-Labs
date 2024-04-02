@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory, SoftDeletes ;
 
-    protected $fillable = ['title', 'body', 'published', 'published_at', 'user_id'];
+    protected $fillable = ['title', 'body', 'published', 'published_at', 'user_id','image'];
 
     public function user()
     {

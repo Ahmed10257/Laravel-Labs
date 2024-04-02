@@ -26,6 +26,7 @@ class StoreRequest extends FormRequest
             'title' => ['required', 'max:30'],
             'body' => ['required', 'max:255'],
             'published' => ['required', 'boolean'],
+            'image' => ['nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048']
 
         ];
     }
